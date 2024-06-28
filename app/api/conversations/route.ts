@@ -7,10 +7,10 @@ export async function POST(request: Request) {
     const currentUser = await getCurrentUser();
     const body = await request.json();
     const { userId, isGroup, members, name } = body;
-    console.log(userId);
 
     if (!currentUser?.id)
       return new NextResponse("Unauthorized", { status: 401 });
+
     if (isGroup && (!members || members.length < 2 || !name))
       return new NextResponse("Invali data", { status: 400 });
     if (isGroup) {

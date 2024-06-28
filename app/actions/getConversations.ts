@@ -1,9 +1,8 @@
 import prisma from "../libs/prismadb";
 import getCurrentUser from "./getCurrentUser";
 
-const getConversation = async () => {
+const getConversations = async () => {
   const currentUser = await getCurrentUser();
-
   if (!currentUser?.id) return [];
 
   try {
@@ -31,3 +30,5 @@ const getConversation = async () => {
     return [];
   }
 };
+
+export default getConversations;

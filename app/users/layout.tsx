@@ -3,11 +3,11 @@ import Sidebar from "../components/Sidebar/Sidebar";
 import UserList from "./components/UserList";
 
 const UsersLayout = async ({ children }: { children: React.ReactNode }) => {
-  const user = await getUsers();
+  const users = await getUsers();
   return (
     <Sidebar>
       <div className="h-full">
-        <UserList items={user} />
+        <UserList items={users} />
         {children}
       </div>
     </Sidebar>
