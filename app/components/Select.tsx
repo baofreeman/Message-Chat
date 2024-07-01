@@ -33,7 +33,7 @@ const Select: React.FC<SelectProps> = ({
           styles={{
             menuPortal: (base) => ({
               ...base,
-              zIndex: 999,
+              zIndex: 9999,
             }),
           }}
           classNames={{ control: () => "text-sm" }}

@@ -1,8 +1,9 @@
 "use client";
 
+import Button from "@/app/components/Button";
 import Modal from "@/app/components/Modal";
+import Select from "@/app/components/Select";
 import Input from "@/app/components/input/Input";
-import { Select } from "@headlessui/react";
 import { User } from "@prisma/client";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
@@ -87,6 +88,14 @@ const GroupChatModal: React.FC<GroupChatModalProp> = ({
               />
             </div>
           </div>
+        </div>
+        <div className="mt-6 flex items-center justify-end gap-x-6">
+          <Button disabled={isLoading} secondary onClick={onClose}>
+            Cancel
+          </Button>
+          <Button disabled={isLoading} secondary type="submit">
+            Create
+          </Button>
         </div>
       </form>
     </Modal>
