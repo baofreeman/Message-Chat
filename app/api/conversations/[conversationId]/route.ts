@@ -49,7 +49,6 @@ export async function DELETE(
 
     return NextResponse.json(deleteConversation);
   } catch (error: any) {
-    console.log(error);
     return new NextResponse("Interal Error", { status: 400 });
   }
 }

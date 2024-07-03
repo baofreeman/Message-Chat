@@ -68,7 +68,6 @@ export async function POST(request: Request, { params }: { params: IParams }) {
 
     return NextResponse.json(updateMessage);
   } catch (error: any) {
-    console.log(error, "ERROR_MESSAGE");
     return new NextResponse("Interal Error", { status: 500 });
   }
 }

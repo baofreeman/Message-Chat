@@ -19,12 +19,12 @@ const UserBox: React.FC<IUserBox> = ({ data }) => {
     try {
       const res = await fetch("/api/conversations", {
         method: "POST",
-        body: JSON.stringify({ userId: data.id }),
+        body: JSON.stringify({ userId: data?.id }),
       });
       const result = await res.json();
       router.push(`/conversations/${result?.id}`);
     } catch (error) {
-      console.log(error);
+      return error;
     }
   }, []);
 

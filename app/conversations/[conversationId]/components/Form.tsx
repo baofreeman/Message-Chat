@@ -35,14 +35,12 @@ const Form = () => {
         conversationId,
       };
 
-      const res = await fetch("/api/messages", {
+      await fetch("/api/messages", {
         method: "POST",
         body: JSON.stringify(newData),
       });
-
-      console.log(res);
     } catch (error) {
-      console.log(error);
+      return error;
     }
   };
 

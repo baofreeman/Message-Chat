@@ -21,7 +21,6 @@ export async function POST(request: Request) {
 
     return NextResponse.json(updateUser);
   } catch (error) {
-    console.log("error", error);
     return new NextResponse("ERROR_SETTINGS", { status: 500 });
   }
 }
