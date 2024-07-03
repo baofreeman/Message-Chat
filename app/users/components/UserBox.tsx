@@ -1,6 +1,7 @@
 "use client";
 
 import Avatar from "@/app/components/Avatar";
+import LoadingModal from "@/app/components/LoadingModal";
 import { User } from "@prisma/client";
 import { useRouter } from "next/navigation";
 import { useCallback, useState } from "react";
@@ -28,13 +29,16 @@ const UserBox: React.FC<IUserBox> = ({ data }) => {
   }, []);
 
   return (
-    <div
-      onClick={handleClick}
-      className="w-full relative flex items-center space-x-3 bg-white p-3 hover:bg-light rounded-lg transition cursor-pointer"
-    >
-      <Avatar user={data} />
-      <h1>{data.name}</h1>
-    </div>
+    <>
+      {isLoading && <LoadingModal />}
+      <div
+        onClick={handleClick}
+        className="w-full relative flex items-center space-x-3 bg-white p-3 hover:bg-light rounded-lg transition cursor-pointer"
+      >
+        <Avatar user={data} />
+        <h1>{data.name}</h1>
+      </div>
+    </>
   );
 };
 

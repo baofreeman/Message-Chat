@@ -4,6 +4,7 @@ import Avatar from "@/app/components/Avatar";
 import AvatarGroup from "@/app/components/AvatarGroup";
 import ConfirmModal from "@/app/components/ConfirmModal";
 import Modal from "@/app/components/Modal";
+import useActiveList from "@/app/hooks/useActiveList";
 import useOtherUser from "@/app/hooks/useOtherUser";
 import {
   Dialog,
@@ -37,10 +38,14 @@ const ProfileDrawer: React.FC<ProfileDrawerProps> = ({
     return data.name || otherUser.name;
   }, [data.name, otherUser.name]);
 
+  const { members } = useActiveList();
+  const isActive = members.indexOf(otherUser?.email!) !== -1;
+
   const statusText = useMemo(() => {
     if (data.isGroup) return `${data.users.length} members`;
-    return "Active";
-  }, [data]);
+    return isActive ? "Online" : "Offline";
+  }, [data, isActive]);
+
   return (
     <>
       <ConfirmModal
@@ -98,6 +103,16 @@ const ProfileDrawer: React.FC<ProfileDrawerProps> = ({
                   </div>
                   <div className="w-full pb-5 pt-5 sm:px-0 sm:pt-0">
                     <dl className="space-y-8 px-4 sm:space-y-6 sm:px-6">
+                      {data.isGroup && (
+                        <div>
+                          <dt className="text-sm font-medium text-gray sm:w-40 sm:flex-shrink-0">
+                            Email
+                          </dt>
+                          <dd className="mt-1 text-sm text-gray sm:col-span-2">
+                            {data.users.map((user) => user.email).join(", ")}
+                          </dd>
+                        </div>
+                      )}
                       {!data.isGroup && (
                         <div>
                           <dt className="text-sm font-medium text-gray sm:w-40 sm:flex-shrink-0">

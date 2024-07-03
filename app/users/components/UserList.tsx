@@ -9,7 +9,7 @@ interface IUserList {
 
 const UserList: React.FC<IUserList> = ({ items }) => {
   return (
-    <aside className="fixed inset-y-0 pb-20 lg:pb-0 lg:left-20 lg:w-80 lg:block overflow-y-auto border-r border-silver block w-full left-0">
+    <aside className="fixed inset-y-0 pb-20 lg:pb-0 lg:left-20 lg:w-[400px] bg-white lg:block overflow-y-auto border-r border-silver block w-full left-0">
       <div className="px-5">
         <div className="flex-col">
           <div className="text-lg font-bold text-silver py-4">People</div>

@@ -32,7 +32,7 @@ const config: Config = {
       current: "currentColor",
       white: "var(--color-white)",
       red: "#f95200",
-      green: "#ade25d",
+      success: "var(--color-success)",
       orange: "#ff8700",
     },
     extend: {},
