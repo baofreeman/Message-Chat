@@ -94,7 +94,7 @@ const ConversationList: React.FC<ConversationListProps> = ({
       >
         <div className="px-5">
           <div className="flex justify-between mb-4 pt-4">
-            <div className="text-2xl font-bold text-black">Message</div>
+            <div className="text-lg font-bold text-silver py-4">Message</div>
             <div
               onClick={() => setIsOpenModal(true)}
               className="rounded-full p-2 bg-white text-gray cursor-pointer hover:opacity-80 transition"

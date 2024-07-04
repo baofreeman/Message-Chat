@@ -2,7 +2,7 @@
 
 const EmptyState = () => {
   return (
-    <div className="px-4 py-10 sm:px-6 lg:px-8 h-full w-full flex justify-center items-center bg-light">
+    <div className="px-4 py-10 sm:px-6 lg:px-8 h-full w-full flex justify-center items-center bg-white">
       Select a conversation
     </div>
   );

@@ -45,7 +45,7 @@ const Form = () => {
   };
 
   return (
-    <div className="p-6 bg-white border-t flex items-center gap-2 lg:gap-4 w-full">
+    <div className="p-6 sm:p-4 bg-white border-t flex items-center gap-4 w-full">
       <CldUploadButton
         options={{ maxFiles: 1 }}
         onUpload={handleUpload}
@@ -59,7 +59,7 @@ const Form = () => {
 
       <form
         onSubmit={handleSubmit(onSubmit)}
-        className="flex items-center gap-2 lg:gap-4 w-full"
+        className="flex items-center gap-4 w-full"
       >
         <MessageInput
           id="message"

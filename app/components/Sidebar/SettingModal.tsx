@@ -97,7 +97,6 @@ const SettingModal: React.FC<SettingModalProps> = ({
                     uploadPreset="glusl1sb"
                   >
                     <Button disabled={isLoading} secondary type="button">
-                      {" "}
                       Change
                     </Button>
                   </CldUploadButton>
@@ -106,7 +105,7 @@ const SettingModal: React.FC<SettingModalProps> = ({
             </div>
           </div>
           <div className="mt-6 flex items-center justify-end gap-x-6">
-            <Button disabled={isLoading} secondary onClick={onClose}>
+            <Button disabled={isLoading} danger onClick={onClose}>
               Cancel
             </Button>
             <Button disabled={isLoading} secondary type="submit">

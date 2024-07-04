@@ -31,9 +31,19 @@ const config: Config = {
       transparent: "transparent",
       current: "currentColor",
       white: "var(--color-white)",
-      red: "#f95200",
+      error: "var(--color-error)",
       success: "var(--color-success)",
       orange: "#ff8700",
+    },
+    screens: {
+      sm: "320px",
+      // => @media (min-width: 640px) { ... }
+
+      md: "768px",
+      // => @media (min-width: 1024px) { ... }
+
+      lg: "1024px",
+      // => @media (min-width: 1280px) { ... }
     },
     extend: {},
   },

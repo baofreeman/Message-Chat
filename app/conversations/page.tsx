@@ -7,7 +7,12 @@ import clsx from "clsx";
 const Home = () => {
   const { isOpen } = useConversation();
   return (
-    <div className={clsx("h-full lg:block", isOpen ? "block" : "hidden")}>
+    <div
+      className={clsx(
+        "h-full lg:block lg:pl-[400px]",
+        isOpen ? "block" : "hidden"
+      )}
+    >
       <EmptyState />
     </div>
   );

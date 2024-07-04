@@ -28,8 +28,10 @@ const Button: React.FC<ButtonProps> = ({
         `flex justify-center rounded-md px-3 py-2 text-md font-semibold focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2`,
         disabled && "opacity-50 cursor-pointer",
         fullWidth && "w-full",
-        secondary ? "text-gray" : "text-white",
-        danger && "bg-red hover:bg-opacity-80 focus-visible:opacity-80",
+        secondary &&
+          "text-white bg-primary hover:opacity-80 focus-visible:opacity-80",
+        danger &&
+          "text-white bg-error hover:opacity-80 focus-visible:opacity-80",
         !secondary &&
           !danger &&
           "bg-silver hover:opacity-80 focus-visible:outline-silver"
