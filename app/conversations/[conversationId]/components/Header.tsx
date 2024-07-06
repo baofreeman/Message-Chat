@@ -37,10 +37,10 @@ const Header: React.FC<HeaderProps> = ({ conversation }) => {
         isOpen={drawerOpen}
         onClose={() => setDrawerOpen(false)}
       />
-      <div className="bg-white w-full flex border-b-[1px] sm:px-4 py-3 px-4 lg:px-6 justify-between items-center shadow-sm">
+      <div className="bg-bgSecondary w-full flex border-b-[1px] border-bgTertiary sm:px-4 py-3 px-4 lg:px-6 justify-between items-center shadow-sm">
         <div className="flex gap-3 items-center">
           <Link
-            className="lg:hidden block text-primary hover:opacity-80 transition cursor-pointer"
+            className="lg:hidden block text-textSecondary hover:opacity-80 transition cursor-pointer"
             href={"/conversations"}
           >
             <HiChevronLeft size={32} />
@@ -52,13 +52,17 @@ const Header: React.FC<HeaderProps> = ({ conversation }) => {
           )}
 
           <div className="flex flex-col">
-            <div>{conversation.name || otherUser.name}</div>
-            <div className="text-sm font-light text-silver">{statusText}</div>
+            <div className="text-textPrimary text-md">
+              {conversation.name || otherUser.name}
+            </div>
+            <div className="text-sm font-light text-textSecondary">
+              {statusText}
+            </div>
           </div>
         </div>
         <HiEllipsisHorizontal
           size={32}
-          className="text-gray hover:opacity-80 cursor-pointer trasition"
+          className="text-textSecondary hover:opacity-80 cursor-pointer trasition"
           onClick={() => setDrawerOpen(true)}
         />
       </div>

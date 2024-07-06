@@ -6,6 +6,12 @@ import MessageBox from "./MessageBox";
 import useConversation from "@/app/hooks/useConversation";
 import { pusherClient } from "@/app/libs/pusher";
 import { find } from "lodash";
+import dynamic from "next/dynamic";
+
+const DynamicMessageBox = dynamic(() => import("./MessageBox"), {
+  loading: () => <p>Loading...</p>,
+  ssr: false,
+});
 
 interface ContentProps {
   initialMessages: FullMessageType[];
@@ -61,7 +67,7 @@ const Content: React.FC<ContentProps> = ({ initialMessages }) => {
   }, [conversationId]);
 
   return (
-    <div className="flex-1 overflow-y-auto">
+    <div className="flex-1 overflow-y-auto bg-bgPrimary">
       {messages.map((message, i) => (
         <MessageBox
           key={message.id}

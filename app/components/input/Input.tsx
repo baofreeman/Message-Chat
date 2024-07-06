@@ -24,12 +24,12 @@ const Input: React.FC<InputProps> = ({
 }) => {
   return (
     <div className={"mt-2"}>
-      <label htmlFor={id} className="text-md">
+      <label htmlFor={id} className="text-md text-textPrimary">
         {label}
       </label>
       <input
         className={clsx(
-          `form-input block text-md w-full rounded-md border-0 py-2 text-black shadow-sm ring-1 ring-inset ring-silver placeholder:text-gray focus:ring-2 focus:ring-inset focus:ring-primary sn:leading-6`,
+          `form-input block text-md w-full bg-bgSecondary rounded-md py-3 text-textPrimary shadow-sm ring-1 ring-inset ring-bgTertiary placeholder:text-textSecondary focus:ring-2 focus:ring-inset focus:ring-active sn:leading-6`,
           errors[id] && "focus:ring-error",
           disabled && "opacity-50 cursor-pointer"
         )}

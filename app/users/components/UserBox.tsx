@@ -33,10 +33,10 @@ const UserBox: React.FC<IUserBox> = ({ data }) => {
       {isLoading && <LoadingModal />}
       <div
         onClick={handleClick}
-        className="w-full relative flex items-center space-x-3 bg-white p-3 hover:bg-light rounded-lg transition cursor-pointer"
+        className="w-full relative flex items-center space-x-3 bg-bgSecondary p-3 hover:bg-bgTertiary rounded-lg transition cursor-pointer my-2"
       >
         <Avatar user={data} />
-        <h1>{data.name}</h1>
+        <h1 className="text-md text-textPrimary font-semibold">{data.name}</h1>
       </div>
     </>
   );

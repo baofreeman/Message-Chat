@@ -34,7 +34,7 @@ const ConfirmModal: React.FC<ConfirmModalProps> = ({ onClose, isOpen }) => {
   return (
     <Modal isOpen={isOpen} onClose={onClose}>
       <div className="sm:flex sm:items-start">
-        <div className="mx-auto flex h-12 w-12 flex-shrink-0 items-center rounded-full bg-white sm:mx-0 sm:h-10 sw:w-10">
+        <div className="mx-auto flex h-12 w-12 flex-shrink-0 items-center rounded-full bg-bgPrimary sm:mx-0 sm:h-10 sw:w-10">
           <FiAlertTriangle className="w-6 h-6 text-red" />
         </div>
         <div className="mt-3 text-center sm:ml-4 sm:mt-0 sm:text-left">

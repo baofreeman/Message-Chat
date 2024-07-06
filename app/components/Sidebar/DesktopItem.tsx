@@ -24,11 +24,11 @@ const DesktopItem: React.FC<DesktopItemProps> = ({
       <Link
         href={href}
         className={clsx(
-          `group flex gap-x-3 rounded-md p-6 leading-6 font-semibold hover:text-black hover:opacity-80`,
-          active ? "text-black" : " text-silver"
+          `group flex gap-x-3 rounded-md p-6 leading-6 font-semibold hover:text-textSecondary hover:opacity-80`,
+          active ? "text-active" : " text-textSecondary"
         )}
       >
-        <Icon className="h-8 w-8 shrink-0" />
+        <Icon className="h-10 w-10 shrink-0" />
         <span className="sr-only">{label}</span>
       </Link>
     </li>

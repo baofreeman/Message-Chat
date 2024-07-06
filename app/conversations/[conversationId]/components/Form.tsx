@@ -45,7 +45,7 @@ const Form = () => {
   };
 
   return (
-    <div className="p-6 sm:p-4 bg-white border-t flex items-center gap-4 w-full">
+    <div className="p-6 sm:p-4 bg-bgPrimary border-t flex items-center gap-4 w-full">
       <CldUploadButton
         options={{ maxFiles: 1 }}
         onUpload={handleUpload}
@@ -53,7 +53,7 @@ const Form = () => {
       >
         <HiPhoto
           size={30}
-          className="text-silver cursor-pointer hover:opacity-80"
+          className="text-textSecondary cursor-pointer hover:opacity-80"
         />
       </CldUploadButton>
 
@@ -70,9 +70,9 @@ const Form = () => {
         />
         <button
           type="submit"
-          className="rounded-full p-2 bg-primary cursor-pointer hover:bg-opacity-80 transition"
+          className="rounded-full p-2 bg-bgPrimary cursor-pointer hover:bg-opacity-80 transition"
         >
-          <HiPaperAirplane size={18} className="text-white" />
+          <HiPaperAirplane size={18} className="text-textSecondary" />
         </button>
       </form>
     </div>

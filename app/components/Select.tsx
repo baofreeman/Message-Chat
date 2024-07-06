@@ -19,7 +19,7 @@ const Select: React.FC<SelectProps> = ({
 }) => {
   return (
     <div className="z-100">
-      <label className="block text-sm font-medium leading-6 text-gray">
+      <label className="block text-md font-medium leading-6 text-textPrimary">
         {label}
       </label>
       <div className="mt-2">

@@ -82,7 +82,7 @@ const AuthForm = () => {
     <>
       {isLoading && <LoadingModal />}
       <div className="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
-        <div className="bg-white px-4 py-8 shadow shadow-silver sm:rounded-lg sm:px-10">
+        <div className="bg-bgModal px-4 py-8 shadow shadow-bgTertiary sm:rounded-lg sm:px-10">
           <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
             {variant === "REGISTER" && (
               <Input
@@ -118,10 +118,10 @@ const AuthForm = () => {
           <div className="mt-6">
             <div className="relative">
               <div className="absolute inset-0 flex items-center">
-                <div className="w-full border-t border-silver" />
+                <div className="w-full border-t border-bgTertiary" />
               </div>
               <div className="relative flex justify-center">
-                <span className="bg-white px-2 text-silver text-sm">
+                <span className="bg-bgModal px-2 text-textSecondary text-sm">
                   Or continue with
                 </span>
               </div>
@@ -138,14 +138,14 @@ const AuthForm = () => {
               />
             </div>
 
-            <div className="flex gap-2 justify-center mt-6 px-2 text-silver text-sm">
+            <div className="flex gap-2 justify-center mt-6 px-2 text-textSecondary text-sm">
               <div>
                 {variant === "LOGIN"
                   ? "New to Message"
                   : "Already have an account?"}
               </div>
               <div
-                className="underline cursor-pointer text-primary"
+                className="underline cursor-pointer text-active"
                 onClick={toggleVariant}
               >
                 {variant === "LOGIN" ? "Create an account" : "Login"}

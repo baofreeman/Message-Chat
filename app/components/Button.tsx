@@ -29,9 +29,9 @@ const Button: React.FC<ButtonProps> = ({
         disabled && "opacity-50 cursor-pointer",
         fullWidth && "w-full",
         secondary &&
-          "text-white bg-primary hover:opacity-80 focus-visible:opacity-80",
+          "text-textPrimary bg-active hover:opacity-80 focus-visible:opacity-80",
         danger &&
-          "text-white bg-error hover:opacity-80 focus-visible:opacity-80",
+          "text-textPrimary bg-error hover:opacity-80 focus-visible:opacity-80",
         !secondary &&
           !danger &&
           "bg-silver hover:opacity-80 focus-visible:outline-silver"

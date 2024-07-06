@@ -54,22 +54,22 @@ const ProfileDrawer: React.FC<ProfileDrawerProps> = ({
       />
 
       <Dialog open={isOpen} className={"relative z-50"} onClose={onClose}>
-        <DialogBackdrop className="fixed inset-0 bg-black opacity-40" />
+        <DialogBackdrop className="fixed inset-0 bg-bgPrimary opacity-90" />
         <div className="flex min-h-full fixed w-screen items-center justify-center right-0 top-0 p-4">
           <DialogPanel
             transition
             className={
-              "w-full h-full max-w-md bg-white absolute right-0 p-6 backdrop-blur-2xl duration-300 ease-out data-[closed]:transform-[scale(95%)] data-[closed]:opacity-0"
+              "w-full h-full max-w-md bg-bgModal absolute right-0 p-6 backdrop-blur-2xl duration-300 ease-out data-[closed]:transform-[scale(95%)] data-[closed]:opacity-0"
             }
           >
-            <div className="flex h-full flex-col overflow-y-scroll bg-white py-6 shadow-xl">
+            <div className="flex h-full flex-col overflow-y-scroll bg-bgModal py-6 shadow-xl">
               <div className="px-4 sm:px-6">
                 <div className="flex items-start justify-end">
                   <div className="flex ml-3 h-7 items-center">
                     <button
                       type="button"
                       onClick={onClose}
-                      className="rounded-md bg-white text-gray hover:text-black focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
+                      className="rounded-md bg-bgSecondary text-textSecondary hover:text-textPrimary focus:outline-none focus:ring-2 focus:ring-bgTertiary focus:ring-offset-2"
                     >
                       <span className="sr-only">Close panel</span>
                       <IoClose size={24} />
@@ -86,17 +86,17 @@ const ProfileDrawer: React.FC<ProfileDrawerProps> = ({
                       <Avatar user={otherUser} />
                     )}
                   </div>
-                  <div>{title}</div>
-                  <div className="text-sm text-silver">{statusText}</div>
+                  <div className="text-textPrimary text-md">{title}</div>
+                  <div className="text-sm text-textSecondary">{statusText}</div>
                   <div
                     className="flex gap-10 my-8"
                     onClick={() => setIsModalOpen(true)}
                   >
                     <div className="flex flex-col gap-3 items-center cursor-pointer hover:opacity-80">
-                      <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center">
-                        <IoTrash size={20} />
+                      <div className="w-10 h-10 bg-bgSecondary rounded-full flex items-center justify-center">
+                        <IoTrash size={20} className="text-textSecondary" />
                       </div>
-                      <div className="text-sm font-light text-silver">
+                      <div className="text-sm font-light text-error">
                         Delete
                       </div>
                     </div>
@@ -105,32 +105,32 @@ const ProfileDrawer: React.FC<ProfileDrawerProps> = ({
                     <dl className="space-y-8 px-4 sm:space-y-6 sm:px-6">
                       {data.isGroup && (
                         <div>
-                          <dt className="text-sm font-medium text-gray sm:w-40 sm:flex-shrink-0">
+                          <dt className="text-sm font-medium text-textPrimary sm:w-40 sm:flex-shrink-0">
                             Email
                           </dt>
-                          <dd className="mt-1 text-sm text-gray sm:col-span-2">
+                          <dd className="mt-1 text-sm text-textPrimary sm:col-span-2">
                             {data.users.map((user) => user.email).join(", ")}
                           </dd>
                         </div>
                       )}
                       {!data.isGroup && (
                         <div>
-                          <dt className="text-sm font-medium text-gray sm:w-40 sm:flex-shrink-0">
+                          <dt className="text-sm font-medium text-textPrimary sm:w-40 sm:flex-shrink-0">
                             Email
                           </dt>
-                          <dd className="mt-1 text-sm text-gray sm:col-span-2">
+                          <dd className="mt-1 text-sm text-textPrimary sm:col-span-2">
                             {otherUser.email}
                           </dd>
                         </div>
                       )}
                       {!data.isGroup && (
                         <>
-                          <hr />
+                          <hr className="text-textSecondary" />
                           <div>
-                            <dt className="text-sm font-medium text-gray sm:w-40 sm:flex-shrink-0">
+                            <dt className="text-sm font-medium text-textPrimary sm:w-40 sm:flex-shrink-0">
                               Joined
                             </dt>
-                            <dd className="mt-1 text-sm text-gray sm:col-span-2">
+                            <dd className="mt-1 text-sm text-textPrimary sm:col-span-2">
                               <time dateTime={joinedDate}>{joinedDate}</time>
                             </dd>
                           </div>

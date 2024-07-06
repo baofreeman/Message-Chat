@@ -10,6 +10,7 @@ import Input from "../input/Input";
 import Image from "next/image";
 import { CldUploadButton } from "next-cloudinary";
 import Button from "../Button";
+import { useTheme } from "next-themes";
 
 interface SettingModalProps {
   isOpen?: boolean;
@@ -36,13 +37,14 @@ const SettingModal: React.FC<SettingModalProps> = ({
       image: currentUser?.image,
     },
   });
-
   const image = watch("image");
   const handleUpload = (result: any) => {
     setValue("image", result?.info?.secure_url, {
       shouldValidate: true,
     });
   };
+
+  const { theme, setTheme } = useTheme();
 
   const onSubmit: SubmitHandler<FieldValues> = async (data) => {
     try {
@@ -58,27 +60,28 @@ const SettingModal: React.FC<SettingModalProps> = ({
       toast.error("Something went wrong!");
     }
   };
-
   return (
     <Modal isOpen={isOpen} onClose={onClose}>
       <form onSubmit={handleSubmit(onSubmit)}>
         <div className="space-y-12">
-          <div className="border-b border-gray pb-12">
-            <h2 className="text-md font-semibold leading-7 text-gray">
+          <div className="border-b border-bgTertiary pb-12">
+            <h2 className="text-md font-semibold leading-7 text-textPrimary">
               Profile
             </h2>
-            <p>Edit your public information</p>
+            <p className="text-sm text-textSecondary font-light">
+              Edit your public information
+            </p>
             <div className="mt-10 flex flex-col gap-y-8">
               <Input
                 disabled={isLoading}
-                label="name"
+                label="Name"
                 id="name"
                 errors={errors}
                 required
                 register={register}
               />
               <div>
-                <label className="block text-sm font-medium leading-6 text-gray">
+                <label className="block text-md font-medium leading-6 text-textPrimary">
                   Photo
                 </label>
                 <div className="mt-2 flex items-center gap-x-3">
@@ -100,6 +103,25 @@ const SettingModal: React.FC<SettingModalProps> = ({
                       Change
                     </Button>
                   </CldUploadButton>
+                </div>
+              </div>
+              <div className="mt-6 flex flex-col gap-2">
+                <h2 className="text-md font-semibold leading-7 text-textPrimary">
+                  Theme
+                </h2>
+                <div className="flex gap-2 flex-wrap">
+                  <Button secondary onClick={() => setTheme("light")}>
+                    Light
+                  </Button>
+                  <Button secondary onClick={() => setTheme("dark")}>
+                    Dark
+                  </Button>
+                  <Button secondary onClick={() => setTheme("pink")}>
+                    Pink
+                  </Button>
+                  <Button secondary onClick={() => setTheme("sky")}>
+                    Sky
+                  </Button>
                 </div>
               </div>
             </div>

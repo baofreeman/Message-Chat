@@ -29,9 +29,10 @@ const MessageBox: React.FC<MessageBoxProps> = ({ data, isLast }) => {
   const body = clsx("flex flex-col gap-2", isOwn && "items-end");
   const message = clsx(
     "text-sm w-fit overflow-hidden",
-    isOwn ? "bg-primary text-white" : "bg-silver",
+    isOwn ? "bg-bgSender text-textPrimary" : "bg-bgSeen text-textPrimary",
     data.image ? "rounded-md p-0" : "rounded-full py-2 px-3"
   );
+
   return (
     <div className={container}>
       <div className={avatar}>
@@ -39,7 +40,7 @@ const MessageBox: React.FC<MessageBoxProps> = ({ data, isLast }) => {
       </div>
       <div className={body}>
         <div className="flex items-center gap-1">
-          <div className="text-base font-semibold text-gray">
+          <div className="text-base font-semibold text-textUser">
             {data.sender.name}
           </div>
           {/* <div className="text-xs text-silver">
@@ -62,7 +63,7 @@ const MessageBox: React.FC<MessageBoxProps> = ({ data, isLast }) => {
               className="object-cover cursor-pointer hover:scale-100 transition translate"
             />
           ) : (
-            <div className="text-md">{data.body}</div>
+            <div className="text-md text-textPrimary">{data.body}</div>
           )}
         </div>
         {isLast && isOwn && seenList.length > 0 && (

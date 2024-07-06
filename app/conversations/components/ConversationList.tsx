@@ -88,16 +88,18 @@ const ConversationList: React.FC<ConversationListProps> = ({
       />
       <aside
         className={clsx(
-          `bg-white lg:fixed inset-y-0 pb-20 lg:pb-0 lg:left-20 lg:w-[400px] lg:block overflow-auto border-r border-gray`,
+          `bg-bgSecondary lg:fixed inset-y-0 pb-20 lg:pb-0 lg:left-20 lg:w-[400px] lg:block overflow-auto border-r border-bgTertiary`,
           isOpen ? `hidden` : "block w-full left-0"
         )}
       >
         <div className="px-5">
           <div className="flex justify-between mb-4 pt-4">
-            <div className="text-lg font-bold text-silver py-4">Message</div>
+            <div className="text-base font-bold text-textPrimary py-4">
+              Message
+            </div>
             <div
               onClick={() => setIsOpenModal(true)}
-              className="rounded-full p-2 bg-white text-gray cursor-pointer hover:opacity-80 transition"
+              className="rounded-full p-2 bg-bgSecondary text-textSecondary cursor-pointer hover:opacity-80 transition"
             >
               <MdOutlineGroupAdd size={20} />
             </div>

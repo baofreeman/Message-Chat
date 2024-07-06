@@ -28,5 +28,6 @@
     ".next/types/**/*.ts",
     ".next/types/app/user/page.tsx"
   ],
+
   "exclude": ["node_modules"]
 }

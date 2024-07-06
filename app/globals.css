@@ -9,18 +9,98 @@ body,
 }
 
 :root {
-  --color-black: #080404;
-  --color-gray: #545454;
-  --color-silver: #b2b2b2;
-  --color-white: #ffffff;
-  --color-light: #f9f9f9;
-  --color-primary: #4079ff;
-  --color-active: #692df6;
-  --color-success: #ade25d;
+  --bg-primary: #ffffff;
+  --bg-secondary: #929292;
+  --bg-tertiary: #e0e0e0;
+  --bg-modal: #ffffff;
+  --bg-sender: #6b82ff;
+  --bg-seen: #d4d4d4;
+
+  --text-primary: #0e0e0e;
+  --text-secondary: #878787;
+  --text-user: #f95200;
+
+  --color-active: #5e00e2;
+  --color-success: #00ff55;
   --color-info: #3e00f9;
   --color-warn: #eaff72;
   --color-error: #f95200;
-  --color-hover: rgba(0, 0, 0, 0.027);
+}
+
+[data-theme="light"] {
+  --bg-primary: rgba(255, 255, 255, 255);
+  --bg-secondary: rgba(241, 241, 241, 255);
+  --bg-tertiary: rgba(220, 220, 220, 255);
+  --bg-modal: rgba(241, 241, 241, 255);
+  --bg-sender: #6b82ff;
+  --bg-seen: rgba(241, 241, 241, 255);
+
+  --text-primary: #000000;
+  --text-secondary: #3c3c3c;
+  --text-user: rgba(115, 126, 135, 255);
+
+  --color-active: rgba(94, 181, 247, 255);
+  --color-success: #00ff55;
+  --color-info: #3e00f9;
+  --color-warn: #eaff72;
+  --color-error: #f95200;
+}
+
+[data-theme="dark"] {
+  --bg-primary: rgba(14, 22, 33, 255);
+  --bg-secondary: rgba(23, 33, 43, 255);
+  --bg-tertiary: rgba(35, 46, 60, 255);
+  --bg-modal: rgba(23, 33, 43, 255);
+  --bg-sender: #6b82ff;
+  --bg-seen: rgba(23, 33, 43, 255);
+
+  --text-primary: #ffffff;
+  --text-secondary: rgba(115, 126, 135, 255);
+  --text-user: #f95200;
+
+  --color-active: rgba(94, 181, 247, 255);
+  --color-success: #00ff55;
+  --color-info: #3e00f9;
+  --color-warn: #eaff72;
+  --color-error: #f95200;
+}
+
+[data-theme="pink"] {
+  --bg-primary: rgba(72, 49, 74, 255);
+  --bg-secondary: rgba(129, 76, 115, 255);
+  --bg-tertiary: rgba(187, 103, 156, 255);
+  --bg-modal: rgba(129, 76, 115, 255);
+  --bg-sender: rgba(158, 90, 136, 255);
+  --bg-seen: rgba(72, 49, 74, 255);
+
+  --text-primary: #ffffff;
+  --text-secondary: rgba(250, 193, 226, 255);
+  --text-user: rgba(244, 130, 197, 255);
+
+  --color-active: rgba(244, 130, 197, 255);
+  --color-success: #00ff55;
+  --color-info: #3e00f9;
+  --color-warn: #eaff72;
+  --color-error: #f95200;
+}
+
+[data-theme="sky"] {
+  --bg-primary: rgba(51, 121, 143, 255);
+  --bg-secondary: rgba(69, 170, 198, 255);
+  --bg-tertiary: rgba(78, 195, 225, 255);
+  --bg-modal: rgba(69, 170, 198, 255);
+  --bg-sender: rgba(60, 146, 171, 255);
+  --bg-seen: rgba(33, 72, 88, 255);
+
+  --text-primary: #ffffff;
+  --text-secondary: rgba(171, 237, 254, 255);
+  --text-user: rgba(87, 219, 252, 255);
+
+  --color-active: rgba(87, 219, 252, 255);
+  --color-success: #00ff55;
+  --color-info: #3e00f9;
+  --color-warn: #eaff72;
+  --color-error: #f95200;
 }
 
 html {
