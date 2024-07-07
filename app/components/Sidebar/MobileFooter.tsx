@@ -7,6 +7,7 @@ import SettingModal from "./SettingModal";
 import { useState } from "react";
 import { User } from "@prisma/client";
 import Avatar from "../Avatar";
+
 interface MobileFooterProps {
   currentUser: User;
 }
