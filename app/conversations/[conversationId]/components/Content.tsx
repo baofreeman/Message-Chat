@@ -7,6 +7,7 @@ import useConversation from "@/app/hooks/useConversation";
 import { pusherClient } from "@/app/libs/pusher";
 import { find } from "lodash";
 import dynamic from "next/dynamic";
+import LoadMore from "./LoadMore";
 
 const DynamicMessageBox = dynamic(() => import("./MessageBox"), {
   loading: () => <p>Loading...</p>,
@@ -21,7 +22,6 @@ const Content: React.FC<ContentProps> = ({ initialMessages }) => {
   const [messages, setMessages] = useState(initialMessages);
   const bottomRef = useRef<HTMLDivElement>(null);
   const { conversationId } = useConversation();
-
   useEffect(() => {
     const fetchData = async () => {
       await fetch(`/api/conversations/${conversationId}/seen`, {
@@ -68,6 +68,7 @@ const Content: React.FC<ContentProps> = ({ initialMessages }) => {
 
   return (
     <div className="flex-1 overflow-y-auto bg-bgPrimary">
+      <LoadMore conversationId={conversationId} />
       {messages.map((message, i) => (
         <MessageBox
           key={message.id}
